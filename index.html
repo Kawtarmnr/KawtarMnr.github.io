@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Page web personnelle </title>
+        <link rel="stylesheet" href="StyleKaw.css">
+    </head>
+    <body>
+        <h1>Kawtar Amanarne </h1>
+        <section class="section1">
+            <h2> voici la première section </h2>
+            <p>Bonjour, je suis Kawtar Amanarne , j'ai 20ans étudiante en 3e année informatique et réseaux <br> je suis une personne ambitieuse et qui cherche toujours à développer ces compétences</p>
+
+        </section>
+        <section class="section2">
+            <h2>Mes hobbies</h2>
+    <ul>
+        <li>Dessin</li>
+        <li>Music</li>
+        <li>Voyage </li>
+    </ul>
+
+    <h2>Mes Objectifs </h2>
+    <ol>
+        <li>Devenir développeur FullStack</li>
+        <li>Voyager autour du monde </li>
+    </ol>
+        </section>
+        <table border="2">
+            <tr>
+                <th>Nom</th>
+                <th> Age</th>
+                <th>Ville</th>
+                <th>Profil</th>
+            </tr>
+            <tr>
+                <td>Hanane</td>
+                <td>25</td>
+                <td>Casablanca</td>
+                <td><a href="#">le profil de Hanane</a></td>
+            </tr>
+            <tr>
+                <td>Asmaa</td>
+                <td>50</td>
+                <td>Casablanca</td>
+                <td><a href="#">le profil de Asmaa</a></td>
+            </tr>
+            <tr>
+                <td>Malika</td>
+                <td>30</td>
+                <td>Agadir</td>
+                <td><a href="#">le profil de Malika</a></td>
+            </tr>
+            <tr>
+                <td>Israe</td>
+                <td>11</td>
+                <td>Casablanca</td>
+                <td><a href="#"> le profil de israe</a></td>
+            </tr>
+        </table>
+        <form>
+            <section class="form">
+                <h2>Formulaire de Contact</h2>
+                <form id="contactForm">
+                   
+                        <label for="name">Nom :</label><br>
+                        <input type="text" id="name" name="name"  required><br>
+                        <label for="email">Email :</label><br>
+                        <input type="email" id="email" name="email"  required><br>
+                        <label for="message">Message :</label><br>
+                        <textarea id="message" name="message" placeholder="Saisir un message  " rows="5" required></textarea><br>
+                        <button type="submit">Soumettre</button><br>
+                   
+            </section>
+        </form>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); 
+    
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name === '') {
+                    alert('Le champ "Nom" est requis.');
+                    return;
+                }
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(email)) {
+                    alert('Veuillez entrer une adresse email valide.');
+                    return;
+                }
+                alert('Formulaire soumis avec succès !');
+            });
+        </script>
+    </body>
+</html>
